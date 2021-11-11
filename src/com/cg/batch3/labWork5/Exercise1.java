@@ -1,46 +1,38 @@
 package com.cg.batch3.labWork5;
 
 import java.util.Scanner;
-class InvalidInputException extends Exception {
-
-	/**
+class NotEligible extends Exception
+{
+/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	InvalidInputException(String exceptionText)
-	{
-		super(exceptionText);
-	}
-
+NotEligible(String msg)	
+{
+	   super(msg);
+}
 }
 public class Exercise1 {
-
-	public static void main(String[] args) {
-
-		System.out.println("Enter the age of person :");
-		Scanner sc = new Scanner(System.in);
-		int age = sc.nextInt();
-
-		try {
-			if(age<15)
-			{
-				throw new InvalidInputException("Exception");
-			}
-			else {
-
-				System.out.println("Entered age is valid");
-
-			}
-		}
-		catch(InvalidInputException e)
-		{
-			System.out.println("Caught exception - Please enter age greater than 15");
-		}
-		sc.close();
-	}
+	 public static void main(String[] args) 
+	    {Scanner sc=new Scanner(System.in);
+	     System.out.println("Enter your age please");
+	     int age=sc.nextInt();
+	     sc.close();
+	     try
+	     {
+	    	 if(age<15)
+	    	 {
+	    		 throw new NotEligible("Not Eligible");
+	    	 }
+	    	 else
+	    	 {
+	    	    System.out.println("You are eligible");	 
+	    	 }   
+	    	 }catch(Exception e)
+	    	 {
+	    		 e.printStackTrace();
+	    	 }
+	     
+	    	 }
 }
-
-
-			
-			
