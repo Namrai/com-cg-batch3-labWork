@@ -34,6 +34,7 @@ public static List<String> getValues(int n) {
 		for(int i = 0 ; i < newList.size() ; i++) {
 			System.out.print(" " + newList.get(i));
 		}
+		sc.close();
 		
 	}
 	
